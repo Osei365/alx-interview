@@ -3,6 +3,7 @@
 pascal's triangle.
 """
 
+
 def pascal_triangle(n):
     """
     calculates pascal's triangle based on n.
