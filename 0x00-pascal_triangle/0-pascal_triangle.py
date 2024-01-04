@@ -7,7 +7,6 @@ def pascal_triangle(n):
     """
     calculates pascal's triangle based on n.
     """
-    
     if n <= 0:
         return []
     if n == 1:
