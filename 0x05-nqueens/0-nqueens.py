@@ -6,24 +6,32 @@ import sys
 if len(sys.argv) != 2:
     print('Usage: nqueens N')
     sys.exit(1)
-elif not sys.argv[1].isdigit():
+if not sys.argv[1].isdigit():
     print('N must be a number')
-else:
-    if int(sys.argv[1]) < 4:
-        print('N must be at least 4')
+if int(sys.argv[1]) < 4:
+    print('N must be at least 4')
+n = int(sys.argv[1])
+def queens(n, i=0, a=[], b=[], c=[]):
+    """ find possible positions """
+    if i < n:
+        for j in range(n):
+            if j not in a and i + j not in b and i - j not in c:
+                yield from queens(n, i + 1, a + [j], b + [i + j], c + [i - j])
     else:
-        N = int(sys.argv[1])
-        for i in range(1, N - 1):
-            x = 0
-            y = i
-            incr = y + 1
-            length = 0
-            result = [[x, y]]
-            while length < (N - 1):
-                x = x + 1
-                y = y + (incr)
-                if y > N:
-                    y = (y % N) - 1
-                result.append([x, y])
-                length += 1
-            print(result)
+        yield a
+
+
+def solve(n):
+    """ solve """
+    k = []
+    i = 0
+    for solution in queens(n, 0):
+        for s in solution:
+            k.append([i, s])
+            i += 1
+        print(k)
+        k = []
+        i = 0
+
+
+solve(n)
