@@ -1,8 +1,9 @@
 #!/usr/bin/python3
+"""fewest coins to meet total."""
 
 
 def makeChange(coins, total):
-
+    """ fewest coins to meet total."""
     if total <= 0:
         return 0
     coins.sort(reverse=True)
