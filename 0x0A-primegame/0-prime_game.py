@@ -17,11 +17,12 @@ def isWinner(x, nums):
                 if isprime(item):
                     break
             mul = 1
+            init_item = item
             while item in choice_list:
                 idx = choice_list.index(item)
                 del choice_list[idx]
                 mul += 1
-                item = item * mul
+                item = init_item * mul
 
             if turn == 0:
                 turn = 1
