@@ -4,6 +4,8 @@
 
 def isWinner(x, nums):
     """gets winner from prime game"""
+    if not nums or x < 1:
+        return None
     ben_wins = 0
     maria_wins = 0
     for i in range(x):
