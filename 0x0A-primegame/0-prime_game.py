@@ -22,12 +22,10 @@ def isWinner(x, nums):
             mul = 1
             init_item = item
             while item in choice_list:
-                print(item)
                 idx = choice_list.index(item)
                 del choice_list[idx]
                 mul += 1
                 item = init_item * mul
-            print(choice_list)
             if turn == 0:
                 turn = 1
             elif turn == 1:
