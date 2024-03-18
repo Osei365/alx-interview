@@ -10,10 +10,7 @@ def isWinner(x, nums):
     maria_wins = 0
     for i in range(x):
         n = nums[i]
-        if n > 0:
-            choice_list = [no for no in range(1, n + 1)]
-        else:
-            choice_list = [0]
+        choice_list = [no for no in range(1, n + 1)]
         turn = 0
         while any([isprime(state) for state in choice_list]):
             for item in choice_list:
